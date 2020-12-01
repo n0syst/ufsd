@@ -1,0 +1,113 @@
+--- /home/antonio/projects/bitbucket/paragon-ntfs-driver-porting-development/assets/tmp/paragon/ifslinux/config.h.in	2017-09-08 18:06:41.000000000 +0200
++++ /home/antonio/projects/bitbucket/paragon-ntfs-driver-porting-development/ifslinux/config.h.in	2018-12-28 15:31:54.018121584 +0100
+@@ -1,5 +1,86 @@
+ /* ifslinux/config.h.in.  Generated from configure.in by autoheader.  */
+ 
++// <Antonio-Petricca@2018>
++
++/********/
++/* 4.15 */
++/********/
++
++/*
++
++  https://communities.vmware.com/thread/572148
++  https://communities.vmware.com/thread/591776
++  https://github.com/mkubecek/vmware-host-modules/commit/770c7ffe611520ac96490d235399554c64e87d9f
++
++*/
++
++#undef HAVE_DECL_GLOBAL_PAGE_STATE
++
++/*
++
++  // https://www.spinics.net/lists/linux-tip-commits/msg41515.html
++  // http://radek.io/2012/11/10/magical-container_of-macro/
++  // https://lwn.net/Articles/735887/
++  // https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=686fef928bba6be13cabe639f154af7d72b63120
++
++*/
++
++#undef HAVE_DECL_SETUP_TIMER
++
++/*
++
++  https://github.com/akiradeveloper/dm-writeboost/issues/182
++
++*/
++
++#undef HAVE_STRUCT_BIO_BI_BDEV
++#undef HAVE_STRUCT_BIO_BI_ERROR
++
++/********/
++/* 4.16 */
++/********/
++
++// https://elixir.bootlin.com/linux/v4.13.12/source/fs/buffer.c
++
++#undef HAVE_DECL_INIT_BUFFER
++
++#if LINUX_VERSION_CODE < KERNEL_VERSION(4, 16, 0)
++  #define IS_STRUCT_POSIXACL_AREFCOUNT_OF_TYPE_ATOMICT 1
++#else
++  #define IS_STRUCT_POSIXACL_AREFCOUNT_OF_TYPE_ATOMICT 0
++#endif
++
++/********/
++/* 4.17 */
++/********/
++
++// https://elixir.bootlin.com/linux/v4.17.19/source/include/linux/radix-tree.h#L129
++
++#undef HAVE_STRUCT_ADDRESS_SPACE_TREE_LOCK
++
++/**************/
++/* 4.18, 4.19 */
++/**************/
++
++#if LINUX_VERSION_CODE < KERNEL_VERSION(4, 18, 0)
++  #define IS_TIMESPEC_64_BIT 1
++#else
++  #define IS_TIMESPEC_64_BIT 0
++#endif
++
++/********/
++/* 4.20 */
++/********/
++
++#undef HAVE_DECL_TIME_TO_TM
++
++/*
++  https://elixir.bootlin.com/linux/latest/source/include/linux/fs.h#L572
++  https://elixir.bootlin.com/linux/v4.17.19/source/include/linux/fs.h#L570
++*/
++
++// </Antonio-Petricca@2018>
++
+ /* Blkdev_issue_flush V3 macro helper */
+ #undef Blkdev_issue_flush
+ 
+@@ -588,3 +669,22 @@
+ 
+ /* HAVE_STRUCT_ helper macro */
+ #undef is_struct
++
++/* <Antonio-Petricca@2018>
++
++  Fix up for Kernel 4.15
++
++</Antonio-Petricca@2018> */
++
++#if LINUX_VERSION_CODE >= KERNEL_VERSION(4, 15, 0)
++
++/*
++
++  http://lists.suse.com/pipermail/sle-beta/2017-November/000158.html
++
++*/
++
++#define page_cache_alloc_cold(x) \
++        page_cache_alloc((x))
++
++#endif
+\ No newline at end of file
