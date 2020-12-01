@@ -1,8 +1,8 @@
 #!/bin/bash
 
-PARAGON_ARCHIVE=Paragon-715-FRE_NTFS_Linux_9.5_Express.tar.gz
+PARAGON_ARCHIVE=Paragon_NTFS_for_Linux_driver_Retail_Express_lke_9.7.0.tar.gz
 PARAGON_FILE=/tmp/${PARAGON_ARCHIVE}
-PARAGON_URL=http://dl.paragon-software.com/free/${PARAGON_ARCHIVE}
+PARAGON_URL=https://dl.paragon-software.com/free/${PARAGON_ARCHIVE}
 
 echo "Preparing \"${PARAGON_ARCHIVE}\"..."
 

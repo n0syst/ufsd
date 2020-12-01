@@ -2,7 +2,7 @@
 
 This project would be an upgrade to the [Paragon NTFS driver for Linux](https://www.paragon-software.com/home/ntfs-linux-professional/).
 
-That driver comes with a [Free Limited Version](https://www.paragon-software.com/home/ntfs-linux-professional/#comparison) which can be downloaded by [this official link](http://dl.paragon-software.com/free/Paragon-715-FRE_NTFS_Linux_9.5_Express.tar.gz).
+That driver comes with a [Free Limited Version](https://www.paragon-software.com/home/ntfs-linux-professional/#comparison) which can be downloaded by [this official link](https://dl.paragon-software.com/free/Paragon_NTFS_for_Linux_driver_Retail_Express_lke_9.7.0.tar.gz).
 
 ## License
 
@@ -22,7 +22,7 @@ The goal of this project is to support kernels 4.13 and newers.
 
 ## How to build
 
-The `apply-patches` script downloads the [free limited version](http://dl.paragon-software.com/free/Paragon-715-FRE_NTFS_Linux_9.5_Express.tar.gz) of the driver, then patches it to work on newer kernel releases.
+The `apply-patches` script downloads the [free limited version](https://dl.paragon-software.com/free/Paragon_NTFS_for_Linux_driver_Retail_Express_lke_9.7.0.tar.gz) of the driver, then patches it to work on newer kernel releases.
 
 ```bash
 ./apply-patches
