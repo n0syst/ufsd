@@ -6,15 +6,15 @@ That driver comes with a [Free Limited Version](https://www.paragon-software.com
 
 ## License
 
-In order to publish this project I received the written (eMail) permission from Paragon which asked me to publish:
+In order to publish this project, antonio-petricca received the written (Email) permission from Paragon which asked him to publish:
 
-- [Paragon - End User License](https://github.com/antonio-petricca/paragon-ufsd-ntfs-driver-porting/Paragon-End-User-License.txt)
-- [Paragon - General terms and conditions](https://github.com/antonio-petricca/paragon-ufsd-ntfs-driver-porting/Paragon-General-terms-and-conditions.pdf)
-- [Paragon - Data protection policy](https://github.com/antonio-petricca/paragon-ufsd-ntfs-driver-porting/Paragon-Data-protection-policy.pdf)
+- [Paragon - End User License](https://raw.githubusercontent.com/luhuachuixue/ufsd/main/Paragon-End-User-License.txt)
+- [Paragon - General terms and conditions](https://raw.githubusercontent.com/luhuachuixue/ufsd/main/Paragon-General-terms-and-conditions.pdf)
+- [Paragon - Data protection policy](https://raw.githubusercontent.com/luhuachuixue/ufsd/main/Paragon-Data-protection-policy.pdf)
 
 ## State of the art
 
-At the time I am writing (September 26, 2018) it supports kernel up to the 4.12.
+At the time antonio-petricca was writing (September 26, 2018) it supports kernel up to the 4.12.
 
 ## Goals
 
