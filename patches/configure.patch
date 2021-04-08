@@ -8,22 +8,6 @@
 +# <Antonio-Petricca@2018>
 +
 +########
-+# 4.20 #
-+########
-+
-+ac_fn_c_check_decl "$LINENO" "time_to_tm" "ac_cv_have_decl_time_to_tm" "#include <linux/time32.h>
-+"
-+if test "x$ac_cv_have_decl_time_to_tm" = xyes; then :
-+  ac_have_decl=1
-+else
-+  ac_have_decl=0
-+fi
-+
-+cat >>confdefs.h <<_ACEOF
-+#define HAVE_DECL_TIME_TO_TM $ac_have_decl
-+_ACEOF
-+
-+########
 +# 4.15 #
 +########
 +
@@ -108,7 +92,57 @@
 +#define HAVE_STRUCT_ADDRESS_SPACE_TREE_LOCK $ac_have_decl
 +_ACEOF
 +
-+# </Antonio-Petricca@2018>
++########
++# 4.20 #
++########
++
++ac_fn_c_check_decl "$LINENO" "time_to_tm" "ac_cv_have_decl_time_to_tm" "#include <linux/time32.h>
++"
++if test "x$ac_cv_have_decl_time_to_tm" = xyes; then :
++  ac_have_decl=1
++else
++  ac_have_decl=0
++fi
++
++cat >>confdefs.h <<_ACEOF
++#define HAVE_DECL_TIME_TO_TM $ac_have_decl
++_ACEOF
++
++
++
++#######
++# 5.0 #
++#######
++
++ac_fn_c_check_decl "$LINENO" "current_kernel_time64" "ac_cv_have_decl_current_kernel_time64" "#include <linux/ktime.h>
++"
++
++if test "x$ac_cv_have_decl_current_kernel_time64" = xyes; then :
++  ac_have_decl=1
++else
++  ac_have_decl=0
++fi
++
++cat >>confdefs.h <<_ACEOF
++#define HAVE_DECL_CURRENT_KERNEL_TIME64 $ac_have_decl
++_ACEOF
++
++ac_have_decl=0
++
++for ac_header in uapi/linux/mount.h
++do :
++  ac_fn_c_check_header_compile "$LINENO" "uapi/linux/mount.h" "ac_cv_header_uapi_linux_mount_h" ""
++if test "x$ac_cv_header_uapi_linux_mount_h" = xyes; then :
++  ac_have_decl=1
++fi
++
++done
++
++cat >>confdefs.h <<_ACEOF
++#define HAVE_UAPI_LINUX_MOUNT_H $ac_have_decl
++_ACEOF
++
++# </Antonio-Petricca@2019>
 +
  ac_fn_c_check_member "$LINENO" "struct bio" "bi_iter" "ac_cv_member_struct_bio_bi_iter" "#include <linux/blk_types.h>
  "

@@ -1,6 +1,6 @@
 --- /home/antonio/projects/bitbucket/paragon-ntfs-driver-porting-development/assets/tmp/paragon/ifslinux/config.h.in	2017-09-08 18:06:41.000000000 +0200
-+++ /home/antonio/projects/bitbucket/paragon-ntfs-driver-porting-development/ifslinux/config.h.in	2018-12-28 15:31:54.018121584 +0100
-@@ -1,5 +1,86 @@
++++ /home/antonio/projects/bitbucket/paragon-ntfs-driver-porting-development/ifslinux/config.h.in	2019-03-04 18:50:02.361277157 +0100
+@@ -1,5 +1,102 @@
  /* ifslinux/config.h.in.  Generated from configure.in by autoheader.  */
  
 +// <Antonio-Petricca@2018>
@@ -84,10 +84,26 @@
 +
 +// </Antonio-Petricca@2018>
 +
++// <Antonio-Petricca@2019>
++
++/*******/
++/* 5.0 */
++/*******/
++
++#undef HAVE_DECL_CURRENT_KERNEL_TIME64
++
++#undef HAVE_UAPI_LINUX_MOUNT_H
++
++#if HAVE_UAPI_LINUX_MOUNT_H
++  #include <uapi/linux/mount.h>
++#endif
++
++// </Antonio-Petricca@2019>
++
  /* Blkdev_issue_flush V3 macro helper */
  #undef Blkdev_issue_flush
  
-@@ -588,3 +669,22 @@
+@@ -588,3 +685,22 @@
  
  /* HAVE_STRUCT_ helper macro */
  #undef is_struct
@@ -110,4 +126,3 @@
 +        page_cache_alloc((x))
 +
 +#endif
-\ No newline at end of file
